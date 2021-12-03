@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PracticalLesson6</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="welcome_message">Чтобы добавить студента нажмите кнопку Добавить студента.\nЧтобы просмотреть список добавленных студентов, нажмите посмотреть студентов и введите имя нужного студента.</string>
+    <string name="student_card">Карточка студента</string>
+    <string name="input_name">Введите имя</string>
+    <string name="input_surname">Введите фамилию</string>
+    <string name="input_faculty">Введите факультет</string>
+    <string name="student_info">Информация о студентах</string>
+    <string name="add_student">Добавить студента</string>
+    <string name="show_student">Посмотреть студентов</string>
+</resources>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">PracticalLesson2</string>
+    <string name="action_task">Task</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="add_student">Add</string>
+
+    <string name="hello_first_fragment">Students list</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="task_title">Задание</string>
+
+    <string name="task_text">1. Разобраться в теоретической части\n
+2. Создать интерфейс для заполнения карточки студента ( фамилия,
+имя, отчество, номер группы, факультет)\n
+3. Предложить несколько (не менее трех) вариантов размещения
+элементов интерфейса на сцене.\n</string>
+
+</resources>

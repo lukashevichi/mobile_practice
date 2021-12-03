@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">practicallesson2</string>
+    <string name="tab_text_1">Variant 1</string>
+    <string name="tab_text_2">Variant 2</string>
+    <string name="tab_text_3">Variant 3</string>
+    <string name="surname">Surname</string>
+    <string name="name">Name</string>
+    <string name="patronymic">patronymic</string>
+    <string name="group_number">group number</string>
+    <string name="faculty">faculty</string>
+    <string name="add">add</string>
+</resources>

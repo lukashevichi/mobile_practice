@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Practicallesson3" parent="Theme.AppCompat.Light">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="greenButton" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/green</item>
+        <item name="colorControlHighlight">@color/green</item>
+    </style>
+
+    <style name="redButton" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/red</item>
+        <item name="colorControlHighlight">@color/red</item>
+    </style>
+
+    <style name="blueButton" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/blue</item>
+        <item name="colorControlHighlight">@color/blue</item>
+    </style>
+
+    <style name="yellowButton" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/yellow</item>
+        <item name="colorControlHighlight">@color/yellow</item>
+    </style>
+</resources>
