@@ -5,16 +5,20 @@
     <item
         android:id="@+id/action_search"
         android:enabled="true"
-        android:icon="@drawable/search"
-        android:iconTint="#42A5F5"
         android:iconifiedByDefault="false"
         android:title="Find"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/action_reload"
+        android:icon="@drawable/refresh"
+        android:title="reload"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/action_settings"
-        android:iconTint="#42A5F5"
         android:title="Settings" />
+
 
 </menu>
