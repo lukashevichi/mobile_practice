@@ -9,10 +9,11 @@ import by.maxluxs.kr2_servicesreceivers.StartupMessageService.Companion.KEY_MESS
 class ServiceMessagesReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        Toast.makeText(
-            context, "Обнаружено сообщение: " +
-                    intent.getStringExtra(KEY_MESSAGE),
-            Toast.LENGTH_LONG
-        ).show()
+        intent.getStringExtra(KEY_MESSAGE)?.let {
+            Toast.makeText(
+                context, "Message found: $it",
+                Toast.LENGTH_LONG
+            ).show()
+        }
     }
 }

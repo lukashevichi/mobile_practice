@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KR2_ServicesReceivers</string>
+    <string name="on">Service on</string>
+    <string name="off">Service off</string>
 </resources>

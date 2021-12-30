@@ -1,0 +1,58 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "c5a58694bcf8ba014d98f7e76f703204",
+    "entities": [
+      {
+        "tableName": "HOME_FLOWERS",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`CATEGORY` TEXT NOT NULL, `INSTRUCTIONS` TEXT NOT NULL, `PHOTO` TEXT NOT NULL, `NAME` TEXT NOT NULL, `UUID` TEXT NOT NULL, PRIMARY KEY(`UUID`))",
+        "fields": [
+          {
+            "fieldPath": "category",
+            "columnName": "CATEGORY",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "instructions",
+            "columnName": "INSTRUCTIONS",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "photo",
+            "columnName": "PHOTO",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "NAME",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "UUID",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "UUID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c5a58694bcf8ba014d98f7e76f703204')"
+    ]
+  }
+}

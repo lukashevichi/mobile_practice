@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/BSUIR/ASOI4.1/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/activity_main.xml" value="0.276268115942029" />
+        <entry key="..\:/BSUIR/ASOI4.1/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/content_main.xml" value="0.276268115942029" />
+        <entry key="..\:/BSUIR/ASOI4.1/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/dialog_create_flower.xml" value="0.276268115942029" />
+        <entry key="..\:/BSUIR/ASOI4.1/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/fragment_flower_details.xml" value="0.276268115942029" />
+        <entry key="..\:/BSUIR/ASOI4.1/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/item_flower.xml" value="0.36367753623188404" />
+        <entry key="..\:/BSUIR/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/drawable/dialog_background.xml" value="0.34074074074074073" />
+        <entry key="..\:/BSUIR/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/activity_main.xml" value="0.28940217391304346" />
+        <entry key="..\:/BSUIR/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/content_main.xml" value="0.28940217391304346" />
+        <entry key="..\:/BSUIR/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/dialog_create_flower.xml" value="0.28659070990359337" />
+        <entry key="..\:/BSUIR/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/fragment_first.xml" value="0.2957427536231884" />
+        <entry key="..\:/BSUIR/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/fragment_flower_details.xml" value="0.28940217391304346" />
+        <entry key="..\:/BSUIR/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/fragment_flowers.xml" value="0.25" />
+        <entry key="..\:/BSUIR/MobileApplications/bsuir_mobile_hw/Kr1/app/src/main/res/layout/item_flower.xml" value="0.28940217391304346" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
