@@ -19,5 +19,4 @@ object DI {
         return context.contentResolver
     }
 
-
 }

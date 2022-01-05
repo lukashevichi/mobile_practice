@@ -1,28 +1,32 @@
-package by.maxluxs.pr5
+package by.maxluxs.pr5.ui
 
+import android.R.attr
 import android.content.ContentResolver
 import android.content.ContentUris
-import android.graphics.Bitmap
-import android.graphics.ImageDecoder
+import android.content.Context
+import android.database.Cursor
 import android.net.Uri
-import android.os.Build
 import android.provider.MediaStore
-import android.util.Log
+import androidx.core.net.toFile
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import by.maxluxs.pr5.model.ImageModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import android.R.attr.data
+import java.io.File
+
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val contentResolver: ContentResolver
 ) : ViewModel() {
 
-    private var imagesLiveData: MutableLiveData<List<Bitmap>> = MutableLiveData()
+    private var imagesLiveData: MutableLiveData<List<ImageModel>> = MutableLiveData()
     val imageList get() = imagesLiveData
 
     init {
@@ -51,21 +55,21 @@ class MainViewModel @Inject constructor(
             imagesLiveData.value = withContext(Dispatchers.IO) {
                 getLocalImagePaths()
                     .map {
-                        Log.e("!!!", it.toString())
-                        MediaStore.Images.Media.getBitmap(contentResolver, it)
+                        ImageModel(
+                            title = getUriFileName(it),
+                            bitmap = MediaStore.Images.Media.getBitmap(contentResolver, it)
+                        )
                     }
             }
         }
     }
 
-    private fun getImage(selectedPhotoUri: Uri): Bitmap {
-        return if (Build.VERSION.SDK_INT < 28) MediaStore.Images.Media.getBitmap(
-            this.contentResolver,
-            selectedPhotoUri
-        )
-        else {
-            val source = ImageDecoder.createSource(this.contentResolver, selectedPhotoUri)
-            ImageDecoder.decodeBitmap(source)
-        }
+    private fun getUriFileName(uri: Uri): String {
+        return uri.path?.let {
+            val file = File(it)
+            val split = file.path.split(":")
+            split.first()
+        } ?: uri.lastPathSegment ?: ""
     }
+
 }

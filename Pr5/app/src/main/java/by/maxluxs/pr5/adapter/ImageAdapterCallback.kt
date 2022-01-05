@@ -1,7 +1,7 @@
 package by.maxluxs.pr5.adapter
 
-import android.graphics.Bitmap
+import by.maxluxs.pr5.model.ImageModel
 
 interface ImageAdapterCallback {
-    fun openImage(bitmap: Bitmap)
+    fun openImage(image: ImageModel)
 }

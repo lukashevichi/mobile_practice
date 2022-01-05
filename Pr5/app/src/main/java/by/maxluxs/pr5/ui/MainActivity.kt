@@ -1,56 +1,45 @@
-package by.maxluxs.pr5
+package by.maxluxs.pr5.ui
 
 import android.Manifest
-import android.content.ContentUris
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.provider.MediaStore
-
-import android.graphics.Bitmap
-import android.graphics.ImageDecoder
-import android.net.Uri
-import android.os.Build
-import android.util.Log
-import android.widget.GridLayout
-import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
-import by.maxluxs.pr5.adapter.ImageAdapterCallback
-import by.maxluxs.pr5.adapter.ImagesAdapter
-import by.maxluxs.pr5.databinding.ActivityMainBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlin.coroutines.CoroutineContext
-import androidx.core.app.ActivityCompat
-
 import android.content.pm.PackageManager
-import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
-import androidx.activity.viewModels
-
+import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.BitmapCompat
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
+import androidx.navigation.ui.setupActionBarWithNavController
+import by.maxluxs.pr5.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(), ImageAdapterCallback {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val adapter: ImagesAdapter? get() = (binding.imagesRecycler.adapter as? ImagesAdapter)
+    private val navHost
+        get() =
+            supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
 
-    private val viewModel: MainViewModel by viewModels()
+    private val navController get() = navHost.navController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        renderRecycler()
-        viewModel.imageList.observe(this) {
-            Log.e("!!!", "observe")
-            Log.e("!!!", it.toString())
-            adapter?.submitList(it)
-        }
+        checkPerms()
+        setupActionBarWithNavController(
+            navController,
+            AppBarConfiguration(navController.graph)
+        )
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
     private fun checkPerms() {
@@ -83,16 +72,6 @@ class MainActivity : AppCompatActivity(), ImageAdapterCallback {
         } else {
             Log.e("Else", "Else")
         }
-    }
-
-    private fun renderRecycler() = binding.imagesRecycler.apply {
-        layoutManager = GridLayoutManager(this@MainActivity, 2)
-        adapter = ImagesAdapter()
-        setHasFixedSize(true)
-    }
-
-    override fun openImage(bitmap: Bitmap) {
-        Toast.makeText(this, "Open image", Toast.LENGTH_SHORT).show()
     }
 
 }

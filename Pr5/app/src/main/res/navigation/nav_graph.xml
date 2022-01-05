@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/imagesFragment">
+
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="by.maxluxs.pr5.ui.ImageFragment"
+        android:label="ImageFragment" />
+
+    <fragment
+        android:id="@+id/imagesFragment"
+        android:name="by.maxluxs.pr5.ui.ImagesFragment"
+        android:label="ImagesFragment">
+        <action
+            android:id="@+id/action_imagesFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+
+
+</navigation>
