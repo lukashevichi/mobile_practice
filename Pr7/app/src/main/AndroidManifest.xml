@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="by.maxluxs.pr7">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.BATTERY_STATS"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:allowBackup="true"
@@ -9,17 +18,21 @@
         android:roundIcon="@drawable/res_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pr7">
+
         <activity
             android:name=".WifiActivity"
-            android:exported="false" />
+            android:exported="true" />
+
         <activity
             android:name=".ContactsActivity"
-            android:exported="false" />
+            android:exported="true" />
+
         <activity
-            android:name=".BatarryActivity"
-            android:exported="false"
+            android:name=".BatteryActivity"
+            android:exported="true"
             android:label="@string/title_activity_batarry"
             android:theme="@style/Theme.Pr7.NoActionBar" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -29,6 +42,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
